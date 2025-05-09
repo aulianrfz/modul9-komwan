@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('anggota', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('posisi');
+            $table->string('nim');
             $table->string('alamat');
             $table->string('email');
             $table->string('pendidikan');
-            $table->text('pengalaman_kerja');
-            $table->text('keahlian');
+            $table->string('nomor_hp');
+            $table->string('gambar')->nullable();
             $table->timestamps();
         });
     }

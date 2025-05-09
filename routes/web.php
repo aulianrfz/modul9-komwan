@@ -13,3 +13,5 @@ Route::get('/', function () {
 
 
 Route::get('/about', [AnggotaController::class, 'show']);
+
+Route::post('/anggota/store', [AnggotaController::class, 'store'])->name('anggota.store');

@@ -16,6 +16,7 @@
         }
 
         header {
+            position: relative;
             background-color: #0066cc;
             color: white;
             padding: 20px;
@@ -29,7 +30,7 @@
         .content {
             max-width: 1000px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 75px;
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -47,15 +48,18 @@
 
         .image-gallery {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Tengah horizontal */
+            align-items: center;     /* Tengah vertikal jika diperlukan */
             margin-top: 30px;
         }
 
         .image-gallery img {
-            width: 32%;
+            width: 60%; /* Sesuaikan ukuran gambar */
+            max-width: 600px;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
         }
+
 
         .image-gallery img:hover {
             transform: scale(1.05);
@@ -75,24 +79,29 @@
 </head>
 <body>
     <header>
-        <h1>KoTA - Tugas Akhir</h1>
+        <h1>Topik Tugas Akhir</h1>
+        <div style="position: absolute; top: 20px; right: 20px;">
+            <a href="{{ url('/about') }}" style="color: white; text-decoration: underline;">About</a>
+        </div>
     </header>
 
     <div class="content">
         <h2>KoTA 105</h2>
-        <h3>Judul: Pengembangan Aplikasi Pengelolaan Kegiatan Kompetisi Pariwisata Indonesia</h3>
-        <p>Deskripsi: Ini adalah deskripsi tentang tugas akhir kami yang berfokus pada pengembangan aplikasi X untuk memecahkan masalah Y. Aplikasi ini bertujuan untuk membantu Z dalam meningkatkan efisiensi dan kemudahan dalam proses bisnis mereka.</p>
+        <h3>Pengembangan Aplikasi Pengelolaan Kegiatan Kompetisi Pariwisata Indonesia</h3>
+        <p>Aplikasi KPI merupakan aplikasi yang dibangun untuk membantu panitia dalam mengelola kegiatan KPI,
+            diantaranya proses pendaftaran, pembayaran, penjadwalan, dan pendaftaran ulang. Dalam aplikasi ini,
+            terdapat pemanfaatan algoritma dalam salah satu proses KPI, yaitu penjadwalan. Pembuatan jadwal aplikasi yang akan
+            dibangun akan memanfaatkan penggunaan Constraint Satisfaction Problem.
+        </p>
         
-        <h3>Gambar-Gambar yang Menarik</h3>
+        <!-- <h3>Beberapa </h3> -->
         <div class="image-gallery">
-            <img src="https://via.placeholder.com/600x400" alt="Gambar 1">
-            <img src="https://via.placeholder.com/600x400" alt="Gambar 2">
-            <img src="https://via.placeholder.com/600x400" alt="Gambar 3">
+            <img src="{{ asset('storage/kpi.jpg') }}" alt="Gambar KPI">
         </div>
     </div>
 
     <div class="footer">
-        <p>&copy; 2025 KoTA - Tugas Akhir</p>
+        <p>&copy; 2025 - KoTA 105</p>
     </div>
 </body>
 </html>
